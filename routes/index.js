@@ -15,6 +15,6 @@ router.route('/hotels').get((req, res) => {
 
 })
 
-// require('./AuthRoutes')(router);
+require('./AuthRoutes')(router);
 
 module.exports.router = router

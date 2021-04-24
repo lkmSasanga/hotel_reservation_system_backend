@@ -24,6 +24,10 @@ let UserSchema = new Schema({
         // minlength: 5,
         required: [true, 'Password field is required!']
     },
+    userType: {
+        type: String,
+        required: [true, 'UserType field is required!']
+    },
 
 });
 
