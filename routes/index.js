@@ -16,5 +16,8 @@ router.route('/hotels').get((req, res) => {
 })
 
 require('./AuthRoutes')(router);
+require('./CustomerRoutes')(router);
+require('./HotelOwnerRoutes')(router);
+require('./SystemAdminRoutes')(router);
 
 module.exports.router = router
