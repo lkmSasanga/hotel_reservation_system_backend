@@ -14,6 +14,6 @@ const hotelSchema = new Schema({
 })
 
 // items is the collection name 
-const Sentiment = mongoose.model('hotels', hotelSchema)
+const Hotel = mongoose.model('hotels', hotelSchema)
 
-module.exports = Sentiment
+module.exports = Hotel

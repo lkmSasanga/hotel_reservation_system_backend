@@ -14,4 +14,4 @@ let HotelOwnerModelSchema = new Schema({
 });
 
 const HotelOwner = mongoose.model('HotelOwner', HotelOwnerModelSchema);
-module.exports = { HotelOwner }
+module.exports = { HotelOwner };
