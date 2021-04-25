@@ -3,14 +3,32 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const hotelSchema = new Schema({
+    hotelOwner_id: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'HotelOwner',
+        required: [true, 'HotelOwner id is required!']
+    },
     city: {
         type: String,
         required: true
     },
-    hotels: {
-        type: Object,
+    hotel_name: {
+        type: String,
         required: true
-    }
+    },
+    rate: {
+        type: String,
+        required: true
+    },
+    rooms_available: {
+        type: String,
+        required: true
+    },
+    price: {
+        type: String,
+        required: true
+    },
+
 })
 
 // items is the collection name 
