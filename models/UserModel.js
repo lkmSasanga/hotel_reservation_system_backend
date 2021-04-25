@@ -2,6 +2,8 @@ let mongoose = require('mongoose');
 let bcrypt = require('bcrypt');
 require("dotenv").config();
 const jwt = require('jsonwebtoken');
+const UserRole = require('../enums/UserRole');
+
 
 const SALT = 10;
 
@@ -26,7 +28,8 @@ let UserSchema = new Schema({
     },
     userType: {
         type: String,
-        required: [true, 'UserType field is required!']
+        enum: UserRole,
+        default: User.CUSTOMER
     },
 
 });
