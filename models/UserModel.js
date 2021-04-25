@@ -29,7 +29,7 @@ let UserSchema = new Schema({
     userType: {
         type: String,
         enum: UserRole,
-        default: User.CUSTOMER
+        default: UserRole.CUSTOMER
     },
 
 });
