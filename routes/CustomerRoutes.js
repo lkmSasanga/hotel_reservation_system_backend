@@ -4,14 +4,10 @@ module.exports = function(app) {
 
     const CustomerController = require("../controllers/CustomerController");
 
-    app.post("/add_vehicle", [Auth, Customer], CustomerController.addVehicle);
-    app.post("/update_vehicle/:id", [Auth, Customer], CustomerController.updateVehicle);
-    app.delete("/delete_vehicle/:id", [Auth, Customer], CustomerController.deleteVehicle);
-
-    app.get("/get_service_record/:id", [Auth, Customer], CustomerController.getServiceRecord);
-    app.post("/add_appointment", [Auth, Customer], CustomerController.addAppointment);
+    app.get("/get_towns", [Auth, Customer], CustomerController.getTowns);
+    app.get("/get_hotels", [Auth, Customer], CustomerController.getHotels);
+    app.post("/add_booking", [Auth, Customer], CustomerController.addBooking);
     app.post("/make_payment", [Auth, Customer], CustomerController.makePayment);
-
-
+    app.get("/get_bookings", [Auth, Customer], CustomerController.getBookings);
 
 };
