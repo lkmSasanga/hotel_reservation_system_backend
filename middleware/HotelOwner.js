@@ -1,7 +1,7 @@
 const { User } = require("../models/UserModel");
 const UserRole = require('../enums/UserRole');
 
-const ServiceAgent = (req, res, next) => {
+const HotelOwner = (req, res, next) => {
     let token = req.header('x-access-token') || req.header('authorization');
 
     if (token) {
