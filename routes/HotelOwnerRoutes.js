@@ -7,5 +7,4 @@ module.exports = function(app) {
     app.get("/get_bookings", [Auth, HotelOwner], HotelOwnerController.getBookings);
     app.post("/add_hotel", [Auth, HotelOwner], HotelOwnerController.addHotel);
 
-
 };
