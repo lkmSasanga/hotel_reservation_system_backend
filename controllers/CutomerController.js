@@ -86,3 +86,27 @@ exports.makePayment = async(req, res) => {
         }
     });
 };
+
+exports.getBookings = async(req, res) => {
+    await Booking.findById(req.params.id, async function(err, booking) {
+        if (err) {
+            return res.status(422).json({
+                success: false,
+                message: "Invalid user id!"
+            });
+        }
+
+        if (!booking) {
+            return res.status(422).json({
+                success: false,
+                message: "Invalid user id!"
+            });
+        }
+
+        return res.status(422).json({
+            success: true,
+            message: "Bookings received!",
+            data: booking
+        });
+    });
+};
