@@ -7,9 +7,15 @@ let BookingeModelSchema = new Schema({
         ref: 'Customer',
         required: [true, 'User field is required!']
     },
-    hotel: {
-        type: String,
-        required: true
+    hotelOwner_id: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'HotelOwner',
+        required: [true, 'HotelOwner id is required!']
+    },
+    hotel_id: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Hotel',
+        required: [true, 'Hotel id is required!']
     },
     checkinDate_date: {
         type: Date,
