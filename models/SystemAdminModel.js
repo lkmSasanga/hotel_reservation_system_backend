@@ -13,5 +13,5 @@ let SystemAdminModelSchema = new Schema({
     }
 });
 
-const SuperAdmin = mongoose.model('SuperAdmin', SystemAdminModelSchema);
+const SystemAdmin = mongoose.model('SuperAdmin', SystemAdminModelSchema);
 module.exports = { SystemAdmin }

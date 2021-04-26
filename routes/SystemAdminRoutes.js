@@ -4,6 +4,6 @@ module.exports = function(app) {
 
     const SystemAdminController = require("../controllers/SystemAdminController");
 
-    app.post("/add_town", [Auth, SystemAdmin], SystemAdminController.addTown);
+    app.post("/api/add_town", [Auth, SystemAdmin], SystemAdminController.addTown);
 
 };

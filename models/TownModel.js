@@ -13,5 +13,5 @@ let TownModelSchema = new Schema({
 
 });
 
-const Town = mongoose.model('Vehicle', TownModelSchema);
+const Town = mongoose.model('Town', TownModelSchema);
 module.exports = { Town };
