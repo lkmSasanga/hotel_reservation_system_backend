@@ -33,12 +33,14 @@ exports.loginUser = (req, res) => {
                         if (err) {
                             return res.status(400).send({ 'success': false, message: err });
                         } else {
+                            // console.log(res);
                             res.status(200).json({
                                 success: true,
                                 message: "Successfully Logged In!",
                                 data: {
                                     "token": token
-                                }
+                                },
+                                user: user
                             });
                         }
                     });
