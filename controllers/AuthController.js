@@ -13,7 +13,8 @@ exports.registerUser = async(req, res) => {
         } else {
             return res.status(200).json({
                 success: true,
-                message: "Successfully Signed Up!"
+                message: "Successfully Signed Up!",
+                user: user
             });
         }
     });
