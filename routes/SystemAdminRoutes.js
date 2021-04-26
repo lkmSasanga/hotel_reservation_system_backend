@@ -1,6 +1,6 @@
 module.exports = function(app) {
     const { Auth } = require("../middleware/auth");
-    const { SystemAdmin } = require("../middleware/systemadmin");
+    const { SystemAdmin } = require("../middleware/systemAdmin");
 
     const SystemAdminController = require("../controllers/SystemAdminController");
 

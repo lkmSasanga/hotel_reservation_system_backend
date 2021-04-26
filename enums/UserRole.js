@@ -1,6 +1,6 @@
 const UserRole = {
     SYSTEM_ADMIN: 'System_Admin',
-    HOTEL_OWNER: 'Hotel_Owner',
+    HOTEL_OWNER: 'HOTEL_OWNER',
     CUSTOMER: 'Customer'
 }
 
