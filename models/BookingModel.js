@@ -17,11 +17,11 @@ let BookingeModelSchema = new Schema({
         ref: 'Hotel',
         required: [true, 'Hotel id is required!']
     },
-    checkinDate_date: {
+    checkin_date: {
         type: Date,
         required: true
     },
-    checkoutDate_date: {
+    checkout_date: {
         type: Date,
         required: true
     },

@@ -25,7 +25,7 @@ exports.getTowns = async(req, res) => {
 //req.params.city
 exports.getHotels = async(req, res) => {
     await Hotel.find({ "city": `${req.query.city}` }, async function(err, hotels) {
-        console.log(`${req.query.city}`);
+        // console.log(`${req.query.city}`);
         if (err) {
             return res.status(422).json({
                 success: false,
@@ -105,7 +105,7 @@ exports.makePayment = async(req, res) => {
 };
 
 exports.getBookings = async(req, res) => {
-    await Booking.findById(req.params.id, async function(err, booking) {
+    await Booking.find({ "customer_id": `${req.query.id}` }, async function(err, booking) {
         if (err) {
             return res.status(422).json({
                 success: false,
