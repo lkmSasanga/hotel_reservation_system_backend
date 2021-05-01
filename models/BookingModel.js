@@ -2,6 +2,10 @@ let mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 
 let BookingeModelSchema = new Schema({
+    hotel_name: {
+        type: String,
+        required: true
+    },
     customer_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Customer',
@@ -27,6 +31,10 @@ let BookingeModelSchema = new Schema({
     },
     people_count: {
         type: String,
+        required: true
+    },
+    payment: {
+        type: Boolean,
         required: true
     }
 });

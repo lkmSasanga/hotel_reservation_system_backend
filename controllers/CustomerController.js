@@ -120,9 +120,32 @@ exports.getBookings = async(req, res) => {
             });
         }
 
-        return res.status(422).json({
+        return res.status(200).json({
             success: true,
             message: "Bookings received!",
+            data: booking
+        });
+    });
+};
+
+exports.deleteBookings = async(req, res) => {
+    await Booking.deleteOne({ _id: req.params.id }, function(err, booking) {
+        if (err) {
+            return res.status(422).json({
+                success: false,
+                message: "Invalid booking id!"
+            });
+        }
+        if (!booking) {
+            return res.status(422).json({
+                success: false,
+                message: "Invalid user id!"
+            });
+        }
+
+        return res.status(200).json({
+            success: true,
+            message: "Booking deleted!",
             data: booking
         });
     });
