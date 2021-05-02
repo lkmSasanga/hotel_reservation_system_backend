@@ -33,6 +33,10 @@ let BookingeModelSchema = new Schema({
         type: String,
         required: true
     },
+    price: {
+        type: String,
+        required: true
+    },
     payment: {
         type: Boolean,
         required: true
