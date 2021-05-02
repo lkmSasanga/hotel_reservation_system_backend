@@ -4,7 +4,7 @@ module.exports = function(app) {
 
     const HotelOwnerController = require("../controllers/HotelOwnerController");
 
-    app.get("/api/get_bookings", [Auth, HotelOwner], HotelOwnerController.getBookings);
+    app.get("/api/hotel_bookings/:id", [Auth, HotelOwner], HotelOwnerController.getBookings);
     app.post("/api/add_hotel", [Auth, HotelOwner], HotelOwnerController.addHotel);
 
 };

@@ -5,7 +5,7 @@ const { Booking } = require("../models/BookingModel");
 // need to add hotel owner id into booking
 
 exports.getBookings = async(req, res) => {
-    await Booking.findById({ 'hotelOwner_id': req.params.id }, async function(err, booking) {
+    await Booking.find({ 'hotelOwner_id': req.params.id }, async function(err, booking) {
         if (err) {
             return res.status(422).json({
                 success: false,
