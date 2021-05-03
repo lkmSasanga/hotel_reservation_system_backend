@@ -31,6 +31,10 @@ let HotelModelSchema = new Schema({
     image: {
         type: String,
         required: true
+    },
+    contact_no: {
+        type: String,
+        required: true
     }
 
 })
