@@ -6,5 +6,6 @@ module.exports = function(app) {
 
     app.get("/api/hotel_bookings/:id", [Auth, HotelOwner], HotelOwnerController.getBookings);
     app.post("/api/add_hotel", [Auth, HotelOwner], HotelOwnerController.addHotel);
+    app.post("/api/get_my_hotels", [Auth, HotelOwner], HotelOwnerController.getHotels);
 
 };
