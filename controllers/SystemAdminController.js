@@ -1,6 +1,7 @@
 const { Booking } = require("../models/BookingModel");
 const { Town } = require("../models/TownModel");
 const { User } = require("../models/UserModel");
+const { Hotel } = require("../models/HotelModel");
 
 
 exports.addTown = async(req, res) => {
@@ -92,3 +93,28 @@ exports.getBookings = async(req, res) => {
         });
     });
 };
+
+exports.getHotels = async(req, res) => {
+    await Hotel.find({ "city": `${req.query.city}` }, async function(err, hotels) {
+        // console.log(`${req.query.city}`);
+        if (err) {
+            return res.status(422).json({
+                success: false,
+                message: "Invalid city!"
+            });
+        }
+
+        if (!hotels) {
+            return res.status(422).json({
+                success: false,
+                message: "Invalid City!"
+            });
+        }
+
+        return res.status(200).json({
+            success: true,
+            message: "Hotels received!",
+            data: hotels
+        });
+    });
+}
