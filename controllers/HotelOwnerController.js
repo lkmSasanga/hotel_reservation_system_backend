@@ -47,7 +47,7 @@ exports.getHotels = async(req, res) => {
         return res.status(200).json({
             success: true,
             message: "Hotels received!",
-            data: booking
+            data: hotel
         });
     });
 };
