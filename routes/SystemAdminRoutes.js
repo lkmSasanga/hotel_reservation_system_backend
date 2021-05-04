@@ -5,5 +5,7 @@ module.exports = function(app) {
     const SystemAdminController = require("../controllers/SystemAdminController");
 
     app.post("/api/add_town", [Auth, SystemAdmin], SystemAdminController.addTown);
+    app.get("/api/all_customers", [Auth, SystemAdmin], SystemAdminController.getCustomers);
+    // app.get("/api/all_hotel_owners", [Auth, SystemAdmin], SystemAdminController.getHotelOwners);
 
 };
