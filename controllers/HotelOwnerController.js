@@ -29,30 +29,52 @@ exports.getBookings = async(req, res) => {
 };
 
 exports.getHotels = async(req, res) => {
-    await Hotel.find({ 'hotelOwner_id': req.params.id }, async function(err, booking) {
+    await Hotel.find({ 'hotelOwner_id': req.params.id }, async function(err, hotel) {
         if (err) {
             return res.status(422).json({
                 success: false,
-                message: "Invalid booking id!"
+                message: "Invalid hotelOWner id!"
             });
         }
 
-        if (!booking) {
+        if (!hotel) {
             return res.status(422).json({
                 success: false,
-                message: "Invalid booking id!"
+                message: "Invalid hotel id!"
             });
         }
 
         return res.status(200).json({
             success: true,
-            message: "cBookings received!",
+            message: "Hotels received!",
             data: booking
         });
     });
 };
 
+exports.updateHotel = async(req, res) => {
+    await Hotel.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true }, function(err, hotel) {
+        if (err) {
+            return res.status(422).json({
+                success: false,
+                message: "Invalid HOtel id!"
+            });
+        }
 
+        if (!hotel) {
+            return res.status(422).json({
+                success: false,
+                message: "Invalid HOtel id!"
+            });
+        }
+
+        return res.status(422).json({
+            success: true,
+            message: "HOtel updated!",
+            data: hotel
+        });
+    });
+};
 
 exports.addHotel = async(req, res) => {
     let newHotel = new Hotel(req.body);
