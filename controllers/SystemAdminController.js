@@ -1,3 +1,4 @@
+const { Booking } = require("../models/BookingModel");
 const { Town } = require("../models/TownModel");
 const { User } = require("../models/UserModel");
 
@@ -70,6 +71,24 @@ exports.getHotelOwners = async(req, res) => {
             success: true,
             message: "Customers received!",
             data: user
+        });
+    });
+};
+
+exports.getBookings = async(req, res) => {
+    await Booking.find(function(err, bookings) {
+        if (err) {
+            return res.status(422).json({
+                success: false,
+                message: "Unable to retrieve bookings!",
+                data: err
+            });
+        }
+
+        return res.status(200).json({
+            success: true,
+            message: "Received bookings!",
+            data: bookings
         });
     });
 };
