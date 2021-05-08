@@ -13,12 +13,17 @@ const SystemAdmin = (req, res, next) => {
             if (err) throw err;
 
             console.log(user);
-            if (user.userType !== UserRole.SYSTEM_ADMIN) {
-                res.status(403).json({
-                    success: false,
-                    message: "No authorization to access this route!"
-                });
+            try {
+                if (user.userType !== UserRole.SYSTEM_ADMIN) {
+                    res.status(403).json({
+                        success: false,
+                        message: "No authorization to access this route!"
+                    });
+                }
+            } catch (e) {
+                console.log(e);
             }
+
 
             next();
         });
