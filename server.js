@@ -86,7 +86,7 @@ app.use(function(req, res) {
 // });
 
 
-app.listen(port, () => {
+app.listen(process.env.PORT, () => {
     console.log(`Server is running on port: ${port}`)
 })
 
