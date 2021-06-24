@@ -32,11 +32,11 @@ app.get('/', function(req, res) {
 
 
 
-let v1 = require('./api/routes');
+let v1 = require('./routes');
 
 
 
-app.use('/api', v1.router);
+app.use('/', v1.router);
 
 app.use(function(req, res) {
     res.status(404).send({ url: req.originalUrl + ' not found' })
