@@ -26,6 +26,11 @@ connection.once('open', () => {
 
 let v1 = require('./routes');
 
+app.get('/', function(req, res) {
+    res.send("Welcome to API!");
+});
+
+
 app.use('/', v1.router);
 
 app.use(function(req, res) {
